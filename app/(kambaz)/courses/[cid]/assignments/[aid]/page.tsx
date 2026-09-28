@@ -8,14 +8,16 @@ export default function AssignmentEditor() {
       <br />
 
       {/*body box*/}
-      <textarea id="wd-description">
-        The assignment is available online Submit a link to the landing page of
+      <textarea id="wd-description" defaultValue={"The assignment is available online Submit a link to the landing page of"}>
+        
       </textarea>
 
       {/*assignment attributes vboxlayout*/}
       <br />
       <table>
         <tbody>
+          {/* 2 cols as hbox */}
+          
           {/* points*/}
           <tr>
             <td align="right" valign="top">
@@ -59,6 +61,7 @@ export default function AssignmentEditor() {
             <td align="right" valign="top">
               <label htmlFor="wd-submission-type">Submission Type</label>
             </td>
+
             <td>
               <select id="wd-submission-type">
                 <option value="online">Online</option>
@@ -81,27 +84,46 @@ export default function AssignmentEditor() {
             </td>
           </tr>
 
-          {/* publishing options vbox: assign to(everyone), date pickers: due, available from/until */}
+          {/* publishing options vbox: assign to(everyone); date pickers: due, available from/until */}
           <tr>
             <td align="right" valign="top">
               <label htmlFor="wd-assign">Assign</label>
             </td>
+
             <td>
               <select id="wd-assign">
                 <option value="everyone">Everyone</option>
               </select>
               <br />
-              
+
               <label htmlFor="wd-due-date">Due Date</label>
               <input type="date" id="wd-due-date" />
               <br />
 
-              <label htmlFor="wd-available-from">Available From</label>
-              <input type="date" id="wd-available-from" />
-              <br />
-              <label htmlFor="wd-available-until">Available Until</label>
-              <input type="date" id="wd-available-until" />
+              {/* these 2 are in the same row / nested hbox table*/}
+              <table>
+                <tbody>
+                  <tr>
+                    <td align="right" valign="top">
+                      <label htmlFor="wd-available-from">Available From</label>
+                    </td>
+                    <td>
+                      <input type="date" id="wd-available-from" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" valign="top">
+                      <label htmlFor="wd-available-until">Available Until</label>
+                    </td>
+                    <td>
+                      <input type="date" id="wd-available-until" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
             </td>
+
           </tr>
 
           {/* cancel and save buttons */}

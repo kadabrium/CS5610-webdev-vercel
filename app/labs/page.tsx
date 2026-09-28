@@ -1,8 +1,7 @@
 import Link from "next/link";
 export default function Labs() {
   return (
-    <>
-    <div id="wd-github"> <Link href="https://github.com/kadabrium/CS5610-webdev-vercel">Github</Link> </div>
+    
     <div id="wd-labs">
       <h1>Labs: Xiaotian Li</h1>
       <ul>
@@ -21,9 +20,10 @@ export default function Labs() {
         <li>
           <Link href="/labs/lab5">Lab 5</Link>
         </li>
+        <li> <Link id="wd-github" href="https://github.com/kadabrium/CS5610-webdev-vercel">Github</Link> </li>
       </ul>
     </div>
-    </>
+    
   );
 }
 
