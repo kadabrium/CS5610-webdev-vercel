@@ -16,15 +16,17 @@ export default function AnchorTag() {
       {/* New tab + safer external link */}
       <a
         href="https://neetcode.com"
+        id="wd-your-link"
         target="_blank"
         rel="noreferrer"
       >
         neetcode (new tab)
       </a>
       <br />
-      This language is fun: {" "}
+      Github: {" "}
       <a
-        href="https://dlang.org"
+        href="https://github.com/kadabrium/CS5610-webdev-vercel"
+        id="wd-your-github"
         target="_blank"
         rel="noreferrer"
       >

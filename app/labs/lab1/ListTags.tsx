@@ -32,7 +32,7 @@ export default function ListTags() {
       </ol>
       <h5>Unordered example 2: </h5>
       My favorite coding channels 
-        <ul id="wd-my-books">
+        <ul id="wd-your-books">
           <li>Cherno</li>
           <li>Daniel Hirsch</li>
           <li>Tsoding</li>

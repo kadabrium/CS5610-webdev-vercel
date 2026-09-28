@@ -1,5 +1,5 @@
 export default function Tables() {
-  return (
+  return (<>
     <div id="wd-tables">
       <h4>Table Tag</h4>
       <table border={1} width="100%">
@@ -81,6 +81,10 @@ export default function Tables() {
         </tfoot>
       </table>
 
+      
+    </div>
+    
+    <div id="wd-your-table">
       <h4>Example table 2</h4>
       <table border={1} width="100%">
         <thead>
@@ -114,7 +118,12 @@ export default function Tables() {
         
       </table>
 
+
+
+
     </div>
+    
+    </>
   );
 }
 
