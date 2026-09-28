@@ -13,3 +13,22 @@ export default function Textarea() {
     </>
   );
 }
+
+export function YourTextarea() {
+  return (
+    <>
+      <h5>Text boxes</h5>
+      <label>Biography:</label>
+      <br />
+      <textarea
+        id="wd-textarea"
+        cols={30}
+        rows={10}
+        defaultValue="Check out EquationParser on my GithHUb - convert plain-text mathematical expressions
+        in to LaTeX. Like and subscribe! It is currently desktop only, but
+        does it mean a web version is in the plans as I'm taking this course?
+        "
+      />
+    </>
+  );
+}

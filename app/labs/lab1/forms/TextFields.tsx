@@ -25,3 +25,34 @@ export default function TextFields() {
     </>
   );
 }
+
+export function YourTextFields() {
+  return (
+    <>
+      <h5>Text Fields</h5>
+      <label htmlFor="wd-text-fields-username">Username:</label>
+      <input placeholder="Kadabrium" id="wd-text-fields-username" /> <br />
+
+      <label htmlFor="wd-text-fields-password">Password:</label>
+      <input
+        type="password"
+        defaultValue="DEADBEEE"
+        id="wd-text-fields-password"
+      />
+      <br />
+
+      <label htmlFor="wd-text-fields-first-name">First name:</label>
+      <input type="text" title="Xiaotial" id="wd-text-fields-first-name" />{" "}
+      <br />
+
+      <label htmlFor="wd-text-fields-last-name">Last name:</label>
+      <input
+        type="text"
+        placeholder="Li"
+        defaultValue="Kadabrium"
+        title="Last name"
+        id="wd-text-fields-last-name"
+      />
+    </>
+  );
+}

@@ -4,8 +4,10 @@ import TextFields from "./TextFields";
 import Textarea from "./Textarea";
 import RadioButtons from "./RadioButtons";
 import Dropdowns from "./Dropdowns";
+import Checkboxes from "./Checkboxes";
 import OtherFieldTypes from "./OtherFieldTypes";
 import Buttons from "./Buttons";
+import YourForms from "./YourForm";
 
 
 export default function Forms() {
@@ -21,9 +23,14 @@ export default function Forms() {
         <TextFields />
         <Textarea />
         <RadioButtons/>
+        <Checkboxes/>
         <Dropdowns/>
         <OtherFieldTypes/>
         <Buttons/>
+      </form>
+
+      <form id="wd-your-form">
+        <YourForms/>
       </form>
 
     </div>

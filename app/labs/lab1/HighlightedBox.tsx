@@ -63,28 +63,45 @@ export default function HighlightedBoxLab() {
           A second box with different style props wrapping different content.
         </p>
       </HighlightedBox>
+      
       <HighlightedBox
-        backgroundColor="#e8f5e9"
+        backgroundColor="navy"
         borderColor="purple"
-        borderWidth={2}
-        borderRadius={20}
+        borderWidth={3}
+        borderRadius={2}
       >
+        <h4>Box 3</h4>
         <p>
-          Trivia about React: in Chrome, updates to the source automatically loads
-          even without the user clicking Refresh.
+          PyBrowser is a project I's developing which uses Python instead of JS in the script section 
+          in html pages it loads. It is text-only; 
+          I'd need to manually map every HTML/CSS element to tkinter widgets if I wanted more!
         </p>
+        <ul>
+          <li>Bun</li>
+          <li>Node</li>
+          <li>Vue</li>
+          <li>React</li>
+        </ul>
+      </HighlightedBox>
+      <HighlightedBox
+        backgroundColor="honeydew"
+        borderColor="seagreen"
+        borderWidth={2}
+        borderRadius={10}
+      >
+        <h4>Sample nested content</h4>
+        <ul>
+          <li>p</li>
+          <li>table</li>
+          <li>form</li>
+        </ul>
       </HighlightedBox>
     </div>
   );
 }
 
-/**
- * Add one more HighlightedParagraph with a short sentence about you (hobby, 
- * hometown, or favorite course) and style props you choose — your colors,
- *  border width, and corner radius. Self-closing tag only; 
- * pass the wording through the text attribute.
- */
 
-/**Add one more sample <HighlightedParagraph text="Props let the same component
- *  render with different colors." backgroundColor="lavender" borderColor="purple" 
- * borderWidth={3} borderRadius={12} /> */
+/**
+ * Add one more sample HighlightedBox with backgroundColor="honeydew", borderColor="seagreen",
+ *  wrapping an h4 "Sample nested content" and a three-item ul of HTML tags (p, table, form)
+ */

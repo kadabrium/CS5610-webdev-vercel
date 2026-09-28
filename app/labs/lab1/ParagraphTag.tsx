@@ -29,9 +29,12 @@ export default function ParagraphTag() {
         dev first and foremost. 
       </p>
       <p id="wd-p-your-2">
-        Trivia about React: a normal jsx function cannot return more than one divs, or
-        any other type of element, at a time. When rendering, one return
-        makes one <code>createElement()</code> call;
+        I like both low level programming such as embedded, ML <code>kernels</code> and 
+        operating systems, as well as pure frontend UI/UX design. Backend, databases and 
+        concurrency? Not as much :p
+      </p>
+      <p id="wd-ai-p">
+        Wrapping text in a paragraph tag gives browsers a semantic block to render with vertical spacing, so each paragraph reads as a separate unit.
       </p>
     </div>
   );

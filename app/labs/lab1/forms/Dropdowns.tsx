@@ -28,3 +28,33 @@ export default function Dropdowns() {
     </>
   );
 }
+
+export function YourDropdowns() {
+  return (
+    <>
+      <h4 id="wd-dropdowns">Dropdowns</h4>
+
+      <h5>Select one</h5>
+      <label htmlFor="wd-select-one-spec">Specialization: </label>
+      <br />
+      <select id="wd-select-one-genre" defaultValue="Cyber">
+        <option value="Cyber">Cybersecurity</option>
+        <option value="AL">AI/ML</option>
+        <option value="DS">Data science</option>
+      </select>
+
+      <h5>Select many</h5>
+      <label htmlFor="wd-select-many-cour">Coursework: </label>
+      <br />
+      <select multiple
+        id="wd-select-many-cour"
+        defaultValue={["Algo", "Hco"]}
+      >
+        <option value="Algo">Algorithms</option>
+        <option value="Comp">Compilation</option>
+        <option value="Hco">Human-Computer</option>
+        <option value="Vis">Machine Vision</option>
+      </select>
+    </>
+  );
+}

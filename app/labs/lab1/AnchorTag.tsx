@@ -8,26 +8,39 @@ export default function AnchorTag() {
       </a>{" "}
       to get dummy text
       <br />
+
       <a href="https://github.com/jannunzi" id="wd-github">
         GitHub
       </a>
-
+      <br />
       {/* New tab + safer external link */}
       <a
-        href="https://github.com/jannunzi"
+        href="https://neetcode.com"
         target="_blank"
         rel="noreferrer"
       >
-        GitHub (new tab)
+        neetcode (new tab)
+      </a>
+      <br />
+      This language is fun: {" "}
+      <a
+        href="https://dlang.org"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Dlang.org (new tab)
+      </a>
+      <br />
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"
+        id="wd-ai-link"
+      >
+        MDN: table element
       </a>
     </>
   );
 }
-/**
- * add two more anchors — one absolute link to a website you visit often 
- * (news, docs, or a hobby site) with id wd-your-link, and one that opens
- *  your own GitHub (or LinkedIn) profile in a new tab with target="_blank" and rel="noreferrer" (id wd-your-github).
- */
+
 
 /**Add one more sample absolute link with id wd-ai-link to 
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table labeled "MDN: table element" */

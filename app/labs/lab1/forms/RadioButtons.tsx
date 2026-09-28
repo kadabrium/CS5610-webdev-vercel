@@ -44,3 +44,52 @@ export default function RadioButtons() {
     </>
   );
 }
+
+export function YourRadioButtons() {
+  return (
+    <>
+      <h5 id="wd-radio-buttons">Radio buttons</h5>
+
+      <label>Grade Standing</label>
+      <br />
+      <input type="radio" name="radio-genre" id="wd-radio-grade-fresh" />
+      <label htmlFor="wd-radio-comedy">Freshman</label>
+      <br />
+      <input type="radio" name="radio-genre" id="wd-radio-grade-soph" />
+      <label htmlFor="wd-radio-drama">Sophomore</label>
+      <br />
+      <input type="radio" name="radio-genre" id="wd-radio-grade-jr" />
+      <label htmlFor="wd-radio-scifi">Junior</label>
+      <br />
+      <input type="radio" name="radio-genre" id="wd-radio-grade-sr" />
+      <label htmlFor="wd-radio-fantasy">Senior</label>
+      <br />
+      <input type="radio" name="radio-grad" id="wd-radio-grade-grad" />
+      <label htmlFor="wd-radio-fantasy">Senior</label>
+      <br />
+
+
+      <label>Program type</label>
+      <br />
+      <input type="radio" name="radio-ptype" id="wd-radio-full" />
+      <label htmlFor="wd-radio-full">Full-time</label>
+      {/* Wrapping label no htmlFor needed */}
+      <label>
+        <input type="radio" name="radio-ptype" id="wd-radio-part" />Part-time
+      </label>
+      <br />
+
+      <label>Location</label>
+      <br />
+      <input type="radio" name="radio-loc" id="wd-radio-on" />
+      <label htmlFor="wd-radio-on">On campus</label>
+      <br />
+
+      <input type="radio" name="radio-loc" id="wd-radio-off" />
+      <label htmlFor="wd-radio-off">Commuting</label>
+
+      <input type="radio" name="radio-loc" id="wd-radio-online" />
+      <label htmlFor="wd-radio-online">Online</label>
+    </>
+  );
+}

@@ -42,3 +42,43 @@ export default function OtherFieldTypes() {
     </>
   );
 }
+
+export function YourOtherFieldTypes() {
+  return (
+    <>
+      <h4>Other HTML field types</h4>
+
+      <label htmlFor="wd-text-fields-email">Email: </label>
+      <input
+        type="email"
+        placeholder="kadabrium@nsomewhere.com"
+        id="wd-text-fields-email"
+      />
+      <br />
+
+      <label htmlFor="wd-grad-year">Graduation time: </label>
+      <input
+        type="number"
+        defaultValue="2027"
+        placeholder="2027"
+        min={0}
+        id="wd-text-fields-grad-year"
+      />
+      <br />
+
+      <label htmlFor="wd-text-start-time">Start time: </label>
+      <input
+        type="date"
+        defaultValue="2026-01-01"
+        min="2000-01-01"
+        max="2026-09-01"
+        id="wd-text-fields-start-time"
+      />
+      <br/>
+
+ 
+        
+      
+    </>
+  );
+}

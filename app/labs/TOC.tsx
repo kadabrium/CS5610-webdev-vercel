@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export default function TOC() {
   return (<>
+    <h4>Collection of my artisanal slop</h4>
     <ul>
       <li>
         <Link href="/labs/lab1">Lab 1</Link>
@@ -13,19 +14,33 @@ export default function TOC() {
         <Link href="/labs/lab3">Lab 3</Link>
       </li>
       <li>
+        <Link href="/labs/lab4">Lab 4</Link>
+      </li>
+      <li>
+        <Link href="/labs/lab5">Lab 5</Link>
+      </li>
+      <li>
         <Link href="/">Welcome page</Link>
+      </li>
+
+      <li>
+        <Link href="/" id="wd-kambaz-link">
+          Kambaz
+        </Link>
+      </li>
+
+      <li>
+        <Link href="https://webdev-client.vercel.app/book/ch1" id="wd-toc-book-link">
+          Chapter 1
+        </Link>
       </li>
     </ul>
   
   </>)
 }
-/**
- * In TOC.tsx, add a small personal touch above or below the lab links — your name, 
- * a one-line motto, or a Link back to the book chapter. Keep the shared layout 
- * structure; only the TOC content should feel like yours.
- */
+
 
 /**
- * Add a Next.js Link to /book/ch1 labeled "Chapter 1" (id wd-toc-book-link)
- *  with the other lab links. Do not change the layout table in layout.tsx.
+ * Add a Next.js Link to (webdev-client.vercel.app/)/book/ch1 labeled "Chapter 1" (id wd-toc-book-link)
+ *  with the other lab links. 
  */

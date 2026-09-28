@@ -30,11 +30,53 @@ export default function Tables() {
             <td align="center">2/17/21</td>
             <td align="right">95</td>
           </tr>
+          <tr>
+            <td>Q4</td>
+            <td align="center">HTML Forms</td>
+            <td align="center">2/24/21</td>
+            <td align="right">88</td>
+          </tr>
+          <tr>
+            <td>Q5</td>
+            <td align="center">React Components</td>
+            <td align="center">3/3/21</td>
+            <td align="right">92</td>
+          </tr>
+          <tr>
+            <td>Q6</td>
+            <td align="center">CSS Layouts</td>
+            <td align="center">3/10/21</td>
+            <td align="right">86</td>
+          </tr>
+          <tr>
+            <td>Q7</td>
+            <td align="center">JavaScript Events</td>
+            <td align="center">3/17/21</td>
+            <td align="right">94</td>
+          </tr>
+          <tr>
+            <td>Q8</td>
+            <td align="center">Accessibility</td>
+            <td align="center">3/24/21</td>
+            <td align="right">90</td>
+          </tr>
+          <tr>
+            <td>Q9</td>
+            <td align="center">Fetching APIs</td>
+            <td align="center">3/31/21</td>
+            <td align="right">96</td>
+          </tr>
+          <tr>
+            <td>Q10</td>
+            <td align="center">Client Routing</td>
+            <td align="center">4/7/21</td>
+            <td align="right">89</td>
+          </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colSpan={3}>Average</td>
-            <td align="right">90</td>
+            <td align="right">90.5</td>
           </tr>
         </tfoot>
       </table>
@@ -76,14 +118,9 @@ export default function Tables() {
   );
 }
 
-/**
- * Still in Tables.tsx, add a second table with id wd-your-table for something 
- * personal — for example courses you are taking this term, or a short weekly 
- * schedule (Day / Activity / Time). Use thead, tbody, at least three data rows,
- *  and align where it helps (center labels, right-align numbers).
- */
+
 
 /**In the quiz grades table, keep Q1–Q3 as they are. Add rows Q4 through Q10 
- * with plausible weekly topics, dates, and grades. Copy the same align 
+ * with plausible web dev topics, dates, and grades. Copy the same align 
  * attributes as Q1–Q3 (Topic and Date center, grade numbers right). 
  * Recalculate the Average in the footer from all ten scores. */

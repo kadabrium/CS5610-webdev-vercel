@@ -37,6 +37,18 @@ export default function ListTags() {
           <li>Daniel Hirsch</li>
           <li>Tsoding</li>
         </ul>
+      {/**After the sample recipe and book lists, add an unordered list
+       *  with id wd-ai-html-tags of HTML tags 
+       * (h1, p, ol, ul, table) with a short phrase each */}
+      <h5>Unordered example 3: </h5>
+      Some HTML tags
+        <ul id="wd-ai-html-tags">
+          <li>h1 - largest heading</li>
+          <li>p - paragraph</li>
+          <li>ol - ordered list</li>
+          <li>ul - unordered list</li>
+          <li>table - table of data</li>
+        </ul>
     </div>
   );
 }

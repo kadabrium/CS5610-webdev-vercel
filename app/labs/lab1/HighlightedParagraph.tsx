@@ -6,7 +6,8 @@ type HlPara = {
   borderRadius?: string | number;
 };
 
-function HighlightedParagraph({text = "This paragraph is highlighted using component props.",
+function HighlightedParagraph({
+  text = "This paragraph is highlighted using component props.",
   backgroundColor = "lightyellow",
   borderColor = "orange",
   borderWidth = 2,
@@ -46,16 +47,25 @@ export default function HighlightedParagraphLab() {
         borderWidth="3px"
         borderRadius="0px"
       />
+      <HighlightedParagraph
+        text="Found it! Dark theme is on? Trivia time: I'm more of a naturalist than a tech guy."
+        backgroundColor="#060606"
+        borderColor="navy"
+        borderWidth="4px"
+        borderRadius="2px"
+      />
+      <HighlightedParagraph
+        text="Props let the same component render with different colors."
+        backgroundColor="lavender"
+        borderColor="purple"
+        borderWidth={3}
+        borderRadius={12}
+      />
     </div>
   );
 }
-/**
- * Add another HighlightedBox that wraps for example an h4 with your name and an unordered 
- * list of three goals for this course. Pick style props that feel different 
- * from the sample boxes so you can see the wrapper stay the same while children change.
- */
 
-/**
- * Add one more sample HighlightedBox with backgroundColor="honeydew", borderColor="seagreen",
- *  wrapping an h4 "Sample nested content" and a three-item ul of HTML tags (p, table, form)
- */
+
+/**Add one more sample <HighlightedParagraph text="Props let the same component
+ *  render with different colors." backgroundColor="lavender" borderColor="purple" 
+ * borderWidth={3} borderRadius={12} /> */

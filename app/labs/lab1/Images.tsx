@@ -26,6 +26,13 @@ export default function Images() {
         height="100px"
         alt="Javascript horror! Use Typescript?"
       />
+      <br />
+      <img
+        id="wd-ai-image"
+        src="https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg"
+        width="200px"
+        alt="NASA image"
+      />
     </div>
   );
 }

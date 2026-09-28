@@ -20,6 +20,11 @@ export default function HeadingTags() {
         the official Next.js/vercel course. This document will subsequently demonstrate HTML elements such as lists,
         tables, images, links and input widgets such as text boxes and buttons.
       </div>
+      <div id="wd-ai-headings">
+        <h4>Lab notes</h4>
+        <h5>What I built</h5>
+        <h6>Next step</h6>
+      </div>
     </div>
     
   );
