@@ -99,7 +99,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-assign">Assign</label>
             </td>
 
-            <td>
+            <td className = "w-full border border-gray-300 rounded px-3 py-2">
               <select id="wd-assign">
                 <option value="everyone">Everyone</option>
               </select>
@@ -113,7 +113,8 @@ export default function AssignmentEditor() {
               <table>
                 <tbody>
                   <tr>
-                    <td align="right" valign="top">
+                    <td align="right" valign="top"
+                      className="block text-top align-top">
                       <label htmlFor="wd-available-from">Available From</label>
                     </td>
                     <td>
@@ -121,7 +122,8 @@ export default function AssignmentEditor() {
                     </td>
                   </tr>
                   <tr>
-                    <td align="right" valign="top">
+                    <td align="right" valign="top"
+                      className="block text-top align-top">
                       <label htmlFor="wd-available-until">Available Until</label>
                     </td>
                     <td>
