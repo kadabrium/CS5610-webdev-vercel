@@ -13,6 +13,19 @@ export default async function CoursesLayout({
     <div id="wd-courses">
       <h2>Courses {cid}</h2>
       <hr />
+
+    <div className="flex gap-4">
+      <div className="hidden w-[140px] shrink-0 md:block">
+        <CourseNavigation cid={cid} />
+      </div>
+      <div className="min-w-0 flex-1">{children}</div>
+    </div>
+    
+    </div>);
+
+    {/*<div id="wd-courses">
+      <h2>Courses {cid}</h2>
+      <hr />
       <table>
         <tbody>
 
@@ -27,6 +40,6 @@ export default async function CoursesLayout({
           
         </tbody>
       </table>
-    </div>
-  );
+    </div>*/}
+  
 }

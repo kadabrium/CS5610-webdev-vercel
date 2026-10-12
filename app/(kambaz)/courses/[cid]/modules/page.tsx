@@ -4,12 +4,40 @@ import Lesson from "./Lesson";
 export default function Modules() {
   return (
     <div>
-      <button>Collapse All</button> <button>View Progress</button>{" "}
+      {/*<button>Collapse All</button> <button>View Progress</button>{" "}
       <select defaultValue="publish-all">
         <option value="publish-all">Publish All</option>
       </select>{" "}
 
-      <button>+ Module</button>
+      <button>+ Module</button>*/}
+      
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          Collapse All
+        </button>
+        <button
+          type="button"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          View Progress
+        </button>
+        <select
+          defaultValue="publish-all"
+          className="rounded border border-neutral-300 bg-white px-3 py-1.5 text-sm"
+        >
+          <option value="publish-all">Publish All</option>
+        </select>
+        <button
+          type="button"
+          className="rounded border border-red-600 bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
+        >
+          + Module
+        </button>
+      </div>
+
       <ul id="wd-modules">
         <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
           <Lesson title="LEARNING OBJECTIVES">
@@ -33,11 +61,35 @@ export default function Modules() {
             </li>
             <li className="wd-content-item">Creating a React Application</li>
           </Lesson>
+
         </Module>
         
-        <Module title="Week 2">{/* Expand lessons on your own */}</Module>
+        <Module title="Week 2 - CSS">{/* Expand lessons on your own */}
+          <Lesson title="LEARNING OBJECTIVES">
+            <li className="wd-content-item">CSS rules</li>
+            <li className="wd-content-item">React CSS classNames</li>
+          </Lesson>
+
+          <Lesson title="READING">
+            <li className="wd-content-item">
+              Tailwind CSS
+            </li>
+            <li className="wd-content-item">
+              Full Stack Developer - Chapter 2 - Styling User Interfaces
+            </li>
+          </Lesson>
+        </Module>
+
         <Module title="Week 3" />
+        <Module title="Sample module (AI)">
+          <Lesson title="Sample lesson (AI)">
+            <li className="wd-content-item">Sample lesson content</li>
+          </Lesson>
+        </Module>
       </ul>
     </div>
   );
 }
+
+/**add one more sample Module titled "Sample module (AI)" containing 
+ * one Lesson titled "Sample lesson (AI)". Reuse Module.tsx, Lesson.tsx, and GreenCheckmark */
