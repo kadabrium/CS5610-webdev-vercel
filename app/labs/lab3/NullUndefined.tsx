@@ -9,7 +9,8 @@ export default function NullUndefined() {
       typeof nullValue = {typeof nullValue}     <br />
       typeof undefinedValue = {typeof undefinedValue} <br />
       String(null) = {String(null)}             <br />
-      String(undefined) = {String(undefined)}
+      String(undefined) = {String(undefined)} <br/>
+      nullValue ?? "default" = {nullValue ?? "default"}
       <hr />
     </div>
   );

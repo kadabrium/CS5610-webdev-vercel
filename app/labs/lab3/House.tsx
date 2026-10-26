@@ -11,6 +11,7 @@ export default function House() {
       country: "Italy",
     },
     owners: ["Alice", "Bob"],
+    yearBuilt: 1999
   };
   console.log(house);
   return (
@@ -20,6 +21,10 @@ export default function House() {
       {house.bedrooms}
       <h5>bathrooms</h5>
       {house.bathrooms}
+      <h5>year built</h5>
+      {house.yearBuilt}
+      <h5>owners</h5>
+      {house.owners.join(",")}
       <h5>Number of properties</h5>
       {Object.keys(house).length}
       <h5>Data</h5>

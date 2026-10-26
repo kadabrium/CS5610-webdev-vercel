@@ -1,15 +1,16 @@
+"use client";
+import { useParams } from "next/navigation";
 import Module from "./Module";
 import Lesson from "./Lesson";
+import * as db from "../../../database";
 
 export default function Modules() {
+  // list of modules under curr course
+  const { cid } = useParams();
+  const modules = db.modules.filter((module) => module.course === cid);
+
   return (
     <div>
-      {/*<button>Collapse All</button> <button>View Progress</button>{" "}
-      <select defaultValue="publish-all">
-        <option value="publish-all">Publish All</option>
-      </select>{" "}
-
-      <button>+ Module</button>*/}
       
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <button
@@ -38,7 +39,17 @@ export default function Modules() {
         </button>
       </div>
 
-      <ul id="wd-modules">
+      <ul id="wd-modules" className="m-0 list-none p-0">
+        {modules.map((module) => (
+          <Module key={module._id} title={module.name}>
+            {module.lessons?.map((lesson) => (
+              <Lesson key={lesson._id} title={lesson.name} />
+            ))}
+          </Module>
+        ))}
+      </ul>
+
+      <ul id="wd-modules-old">
         <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
           <Lesson title="LEARNING OBJECTIVES">
             <li className="wd-content-item">Introduction to the course</li>
@@ -91,5 +102,3 @@ export default function Modules() {
   );
 }
 
-/**add one more sample Module titled "Sample module (AI)" containing 
- * one Lesson titled "Sample lesson (AI)". Reuse Module.tsx, Lesson.tsx, and GreenCheckmark */

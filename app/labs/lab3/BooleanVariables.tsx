@@ -9,6 +9,10 @@ export default function BooleanVariables() {
   let true4 = numberVariable === 123;
   let true5 = floatingPointNumber !== 321.432;
   let false3 = numberVariable < 100;
+  let numStr = "123";
+  let eqWithType = "123" === numStr;
+  
+
   return (
     <div id="wd-boolean-variables">
       <h4>Boolean Variables</h4>

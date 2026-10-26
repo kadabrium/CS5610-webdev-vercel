@@ -5,10 +5,15 @@ export default function ForLoops() {
     const string1 = stringArray1[i];
     stringArray2.push(string1.toUpperCase());
   }
+  let stringArrL = [];
+  for (let str of stringArray1) {
+    stringArrL.push(str.toLowerCase());
+  }
   return (
     <div id="wd-for-loops">
       <h4>Looping through arrays</h4>
-      stringArray2 = {stringArray2}
+      stringArray2 = {stringArray2}<br/>
+      stringArrayLower = {stringArrL}
       <hr />
     </div>
   );

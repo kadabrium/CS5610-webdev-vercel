@@ -1,4 +1,5 @@
 export default function Styles() {
+  // use js-like objects as style html attr
   const colorBlack = { color: "black" };
   const padding10px = { padding: "10px" };
   const bgBlue = {
@@ -6,6 +7,11 @@ export default function Styles() {
     color: "black",
     ...padding10px,
   };
+  const bgGreen = {
+    backgroundColor: 'green',
+    ...colorBlack,
+    ...padding10px
+  }
   const bgRed = {
     backgroundColor: "lightcoral",
     ...colorBlack,
@@ -25,6 +31,7 @@ export default function Styles() {
       </div>
       <div style={bgRed}>Red background</div>
       <div style={bgBlue}>Blue background</div>
+      <div style={bgGreen}>Green</div>
     </div>
   );
 }

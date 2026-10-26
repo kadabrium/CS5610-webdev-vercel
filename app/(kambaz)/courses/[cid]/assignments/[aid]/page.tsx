@@ -1,21 +1,26 @@
 import Link from "next/link";
 import { FaPlus, FaSearch } from "react-icons/fa";
+import * as db from "../../../../database";
 
-export default function AssignmentEditor() {
+type asAID = { params: Promise<{ cid: string, aid: string }>; }
+export default async function AssignmentEditor( { params }: asAID) {
+  const {cid, aid} = await params;
+  const asmt = db.assignments.find((a) => a._id === aid);
+
   // Assignment Name, Description, Points, and Due Date
   return (
     <div id="wd-assignments-editor">
        {/*Assignment name title box*/}
-      <label htmlFor="wd-name"
-        className="block text-top align-top pr-3 py-3">
-        Assignment Name</label>
-      <input id="wd-name" defaultValue="A1 - ENV + HTML" />
-      <br />
-      <br />
+      <label htmlFor="wd-name" className="block text-top align-top pr-3 py-3">
+        Assignment Name {asmt?._id}</label>
+      <input id="wd-name" defaultValue={asmt?.title ?? "A1 - HTML + CSS"} />
+      <label htmlFor="wd-name" className="block text-top align-top pr-3 py-3">
+        Assignment ID {aid}</label>
 
+      
       {/*Description body box*/}
-      <textarea id="wd-description" 
-        defaultValue={"The assignment is available online Submit a link to the landing page of"}
+      <textarea id="wd-description" rows = {10}
+        defaultValue={asmt?.description ?? "The assignment is available online Submit a link to the landing page of"}
         className = "font-sans mb-2 w-full rounded border border-neutral-300 px-3 py-2">
       </textarea>
 
@@ -33,7 +38,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-points">Points</label>
             </td>
             <td>
-              <input id="wd-points" defaultValue={100} className="w-full border border-gray-300 rounded px-3 py-2" />
+              <input id="wd-points" defaultValue={asmt?.points ?? 100} className="w-full border border-gray-300 rounded px-3 py-2" />
             </td>
           </tr>
 
@@ -106,7 +111,7 @@ export default function AssignmentEditor() {
               <br />
 
               <label htmlFor="wd-due-date">Due Date</label>
-              <input type="date" id="wd-due-date" />
+              <input type="date" id="wd-due-date" defaultValue={asmt?.due ?? "2026-10-25"} />
               <br />
 
               {/* these 2 are in the same row / nested hbox table*/}
@@ -118,7 +123,7 @@ export default function AssignmentEditor() {
                       <label htmlFor="wd-available-from">Available From</label>
                     </td>
                     <td>
-                      <input type="date" id="wd-available-from" />
+                      <input type="date" id="wd-available-from" defaultValue={asmt?.available ?? "2026-10-25"}/>
                     </td>
                   </tr>
                   <tr>
@@ -127,7 +132,7 @@ export default function AssignmentEditor() {
                       <label htmlFor="wd-available-until">Available Until</label>
                     </td>
                     <td>
-                      <input type="date" id="wd-available-until" />
+                      <input type="date" id="wd-available-until" defaultValue={asmt?.due ?? "2026-10-25"}/>
                     </td>
                   </tr>
                 </tbody>
@@ -137,13 +142,7 @@ export default function AssignmentEditor() {
 
           </tr>
 
-          {/* cancel and save buttons 
-          <tr>
-            <td colSpan={2} align="center">
-              <button id="wd-cancel">Cancel</button>
-              <button id="wd-save">Save</button>
-            </td>
-          </tr>*/}
+          {/* cancel and save buttons */}
 
         </tbody>
       </table>

@@ -4,6 +4,7 @@ export default function Spreader() {
   const obj1 = { a: 1, b: 2, c: 3 };
   const obj2 = { ...obj1, d: 4, e: 5, f: 6 };
   const obj3 = { ...obj1, b: 4 };
+  const obj4 = { ...obj2, a: -4 };
   return (
     <div id="wd-spreading">
       <h2>Spread Operator</h2>
@@ -14,6 +15,7 @@ export default function Spreader() {
       {JSON.stringify(obj1)}        <br />
       {JSON.stringify(obj2)}        <br />
       {JSON.stringify(obj3)}        <br />
+      {JSON.stringify(obj4)}        <br />
       <hr />
     </div>
   );

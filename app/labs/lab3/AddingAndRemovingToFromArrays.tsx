@@ -8,8 +8,10 @@ export default function AddingAndRemovingToFromArrays() {
   numberArray1.push(6);
   stringArray1.push("string3");
   todoArray.push(<li key={3}>Walk the dogs</li>);
+  todoArray.push(<li key={3}>Mow the lawn</li>);
   numberArray1.splice(2, 1);
   stringArray1.splice(1, 1);
+  todoArray.splice(1, 1);
   return (
     <div id="wd-adding-removing-from-arrays">
       <h4>Add/remove to/from arrays</h4>
@@ -21,4 +23,4 @@ export default function AddingAndRemovingToFromArrays() {
     </div>
   );
 }
-/**After the existing todoArray.push for Walk the dogs, also push <li key={4}>Buy stamps</li>. Leave the number and string splices as they are */
+/**After the existing todoArray.push, also push <li key={4}>Buy stamps</li>. Leave the number and string splices as they are */

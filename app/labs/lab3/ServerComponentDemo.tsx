@@ -6,6 +6,7 @@ export default function ServerComponentDemo() {
   const nodeVersion = process.version;
   const serverRenderTime = new Date().toLocaleTimeString();
   const lab3Dir = path.join(process.cwd(), "app/labs/lab3");
+  const arch = process.arch;
   let files: string[] = [];
   try {
     files = fs.readdirSync(lab3Dir);
@@ -20,7 +21,7 @@ export default function ServerComponentDemo() {
       <p>Rendered on server at: {serverRenderTime}</p>
       <h2>Server Information</h2>
       <pre>
-        {JSON.stringify({ platform, nodeVersion, serverRenderTime }, null, 2)}
+        {JSON.stringify({ platform, nodeVersion, serverRenderTime, arch }, null, 2)}
       </pre>
       <h2>Filesystem Access Demo</h2>
       <pre>{JSON.stringify(files, null, 2)}</pre>

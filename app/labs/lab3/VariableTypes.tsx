@@ -6,6 +6,8 @@ export default function VariableTypes() {
   let isNumber = typeof numberVariable;
   let isString = typeof stringVariable;
   let isBoolean = typeof booleanVariable;
+  const str2 = "every data type can be let, const or var";
+  const negNum2 = -0.02;
   return (
     <div id="wd-variable-types">
       <h4>Variables Types</h4>
@@ -16,6 +18,8 @@ export default function VariableTypes() {
       isNumber = {isNumber}                       <br />
       isString = {isString}                       <br />
       isBoolean = {isBoolean}
+      str2 = {str2}
+      negNum2 = {negNum2}
       <hr />
     </div>
   );

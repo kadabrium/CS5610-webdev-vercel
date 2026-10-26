@@ -3,6 +3,7 @@ import "./Classes.css";
 export default function Classes() {
   const color = "blue";
   const dangerous = true;
+  const greenOrYellow = "green";
   return (
     <div id="wd-classes">
       <h2>Classes</h2>
@@ -22,6 +23,11 @@ export default function Classes() {
         className={`${dangerous ? "wd-bg-red" : "wd-bg-green"} wd-fg-black wd-padding-10px`}
       >
         Dangerous background
+      </div>
+      <div
+        className={`${greenOrYellow == "green" ? "wd-bg-green" : "wd-bg-yellow"} wd-fg-black wd-padding-10px`}
+      >
+        Set green or yellow
       </div>
       <hr />
     </div>

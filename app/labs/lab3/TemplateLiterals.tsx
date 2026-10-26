@@ -6,6 +6,7 @@ export default function TemplateLiterals() {
   const greeting1 = `Welcome home ${username}`;
   const loggedIn = false;
   const greeting2 = `Logged in: ${loggedIn ? "Yes" : "No"}`;
+
   return (
     <div id="wd-template-literals">
       <h4>Template Literals</h4>
