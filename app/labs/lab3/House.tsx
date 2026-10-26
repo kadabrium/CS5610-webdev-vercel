@@ -11,9 +11,11 @@ export default function House() {
       country: "Italy",
     },
     owners: ["Alice", "Bob"],
+    garage: { cars: 2 },
     yearBuilt: 1999
   };
   console.log(house);
+  console.log(house.address.city);
   return (
     <div id="wd-house">
       <h4>House</h4>
@@ -21,6 +23,8 @@ export default function House() {
       {house.bedrooms}
       <h5>bathrooms</h5>
       {house.bathrooms}
+      <h5>Garage cars</h5>
+      {house.garage.cars}
       <h5>year built</h5>
       {house.yearBuilt}
       <h5>owners</h5>
@@ -33,4 +37,3 @@ export default function House() {
     </div>
   );
 }
-/**Add garage: { cars: 2 } to the house object and interpolate house.garage.cars under bathrooms (or under yearBuilt if that heading exists). keep console.log(house) and any console.log(house.owners) I added. Also console.log(house.address.city)*/

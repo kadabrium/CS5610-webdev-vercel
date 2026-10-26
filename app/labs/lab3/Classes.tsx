@@ -4,6 +4,7 @@ export default function Classes() {
   const color = "blue";
   const dangerous = true;
   const greenOrYellow = "green";
+  const shade = "green";
   return (
     <div id="wd-classes">
       <h2>Classes</h2>
@@ -29,8 +30,10 @@ export default function Classes() {
       >
         Set green or yellow
       </div>
+      <div className={`wd-bg-${shade} wd-fg-black wd-padding-10px`}>
+        Dynamic Green background
+      </div>
       <hr />
     </div>
   );
 }
-/**keep color as "blue" and dangerous as true. After the existing boxes, add a sixth div whose className uses a new const shade = "green" as `wd-bg-${shade} wd-fg-black wd-padding-10px` and the text "Dynamic Green background" */

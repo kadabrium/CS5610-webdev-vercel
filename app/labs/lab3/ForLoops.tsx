@@ -1,9 +1,11 @@
 export default function ForLoops() {
   let stringArray1 = ["string1", "string3"];
   let stringArray2: string[] = [];
+  let stringLengths: number[] = [];
   for (let i = 0; i < stringArray1.length; i++) {
     const string1 = stringArray1[i];
     stringArray2.push(string1.toUpperCase());
+    stringLengths.push(string1.length);
   }
   let stringArrL = [];
   for (let str of stringArray1) {
@@ -12,10 +14,10 @@ export default function ForLoops() {
   return (
     <div id="wd-for-loops">
       <h4>Looping through arrays</h4>
-      stringArray2 = {stringArray2}<br/>
+      stringArray2 = {stringArray2}<br />
+      stringLengths = {stringLengths}<br />
       stringArrayLower = {stringArrL}
       <hr />
     </div>
   );
 }
-/**In the same loop (or a second loop), also push string1.length into a number[] named stringLengths and display stringLengths under stringArray2 */

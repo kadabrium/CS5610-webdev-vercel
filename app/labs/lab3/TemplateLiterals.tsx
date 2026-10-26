@@ -6,6 +6,8 @@ export default function TemplateLiterals() {
   const greeting1 = `Welcome home ${username}`;
   const loggedIn = false;
   const greeting2 = `Logged in: ${loggedIn ? "Yes" : "No"}`;
+  const published = true;
+  const courseStatus = `RS101 published: ${published ? "Yes" : "No"}`;
 
   return (
     <div id="wd-template-literals">
@@ -13,9 +15,9 @@ export default function TemplateLiterals() {
       result1 = {result1}     <br />
       result2 = {result2}     <br />
       greeting1 = {greeting1} <br />
-      greeting2 = {greeting2}
+      greeting2 = {greeting2} <br />
+      courseStatus = {courseStatus}
       <hr />
     </div>
   );
 }
-/**After the existing samples, add const published = true and const courseStatus = `RS101 published: ${published ? "Yes" : "No"}`, then interpolate courseStatus under greeting2 */

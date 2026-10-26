@@ -9,6 +9,7 @@ export default function BooleanVariables() {
   let true4 = numberVariable === 123;
   let true5 = floatingPointNumber !== 321.432;
   let false3 = numberVariable < 100;
+  const true6 = numberVariable !== 0;
   let numStr = "123";
   let eqWithType = "123" === numStr;
   
@@ -23,9 +24,9 @@ export default function BooleanVariables() {
       true3 = {true3 + ""}   <br />
       true4 = {true4 + ""}   <br />
       true5 = {true5 + ""}   <br />
-      false3 = {false3 + ""}
+      false3 = {false3 + ""} <br />
+      true6 = {true6 + ""}
       <hr />
     </div>
   );
 }
-/**After the existing booleans, add const true6 = numberVariable !== 0 and display it as true6 = {true6 + ""} the same way as the others. */

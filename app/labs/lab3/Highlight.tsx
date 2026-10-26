@@ -10,4 +10,3 @@ export default function Highlight({ children }: { children: ReactNode }) {
     </span>
   );
 }
-/** In page.tsx, after the sample Square of 4, add <p>Square of 5 = <Square>5</Square></p> and one more <Highlight>Children can be any JSX</Highlight> */

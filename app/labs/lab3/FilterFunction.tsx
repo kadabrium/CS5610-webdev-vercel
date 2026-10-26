@@ -3,16 +3,17 @@ export default function FilterFunction() {
   const numbersGreaterThan2 = numberArray1.filter((a) => a > 2);
   const evenNumbers = numberArray1.filter((a) => a % 2 === 0);
   const oddNumbers = numberArray1.filter((a) => a % 2 !== 0);
+  const numbersLessThan2 = numberArray1.filter((a) => a < 2);
   const greaterthan5 = numberArray1.filter((num) => num > 5);
   return (
     <div id="wd-filter-function">
       <h4>Filter Function</h4>
       numbersGreaterThan2 = {numbersGreaterThan2} <br />
       evenNumbers = {evenNumbers}                 <br />
-      oddNumbers = {oddNumbers} <br/>
+      oddNumbers = {oddNumbers} <br />
+      numbersLessThan2 = {numbersLessThan2} <br />
       greater than 5 = {greaterthan5}
       <hr />
     </div>
   );
 }
-/**After oddNumbers, add const numbersLessThan2 = numberArray1.filter((a) => a < 2) and interpolate it. */

@@ -1,4 +1,4 @@
-import Math, { add, subtract, multiply, divide } from "./Math";
+import Math, { add, subtract, multiply, divide, remainder } from "./Math";
 import * as Matematica from "./Math";
 
 export default function DestructingImports() {
@@ -38,6 +38,11 @@ export default function DestructingImports() {
             <td>Math.add(8, 2) = {Math.add(8, 2)}</td>
             <td>Matematica.add(8, 2) = {Matematica.add(8, 2)}</td>
             <td>add(8, 2) = {add(8, 2)}</td>
+          </tr>
+          <tr>
+            <td>Math.remainder(10, 3) = {Math.remainder(10, 3)}</td>
+            <td>Matematica.remainder(10, 3) = {Matematica.remainder(10, 3)}</td>
+            <td>remainder(10, 3) = {remainder(10, 3)}</td>
           </tr>
         </tbody>
       </table>

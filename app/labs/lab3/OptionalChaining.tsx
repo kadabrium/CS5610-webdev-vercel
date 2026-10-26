@@ -17,10 +17,10 @@ export default function OptionalChaining() {
     <div id="wd-optional-chaining">
       <h4>Optional Chaining</h4>
       house.address?.city = {house.address?.city} <br />
+      house.address?.zip ?? &quot;unknown&quot; = {house.address?.zip ?? "unknown"} <br />
       missing?.prop ?? "n/a" = {missing?.prop ?? "n/a"} <br />
       missing house?.garage = {house.garage?.cars ?? 0}
       <hr />
     </div>
   );
 }
-/**After the existing lines, also interpolate house.address?.zip ?? "unknown" so the missing zip uses the fallback. */

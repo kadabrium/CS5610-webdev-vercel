@@ -6,6 +6,10 @@ export default function VariableTypes() {
   let isNumber = typeof numberVariable;
   let isString = typeof stringVariable;
   let isBoolean = typeof booleanVariable;
+  let sampleCount = 42;
+  let sampleLabel = "Lab 3";
+  let isSampleCount = typeof sampleCount;
+  let isSampleLabel = typeof sampleLabel;
   const str2 = "every data type can be let, const or var";
   const negNum2 = -0.02;
   return (
@@ -17,11 +21,14 @@ export default function VariableTypes() {
       booleanVariable = {booleanVariable + ""}    <br />
       isNumber = {isNumber}                       <br />
       isString = {isString}                       <br />
-      isBoolean = {isBoolean}
-      str2 = {str2}
-      negNum2 = {negNum2}
+      isBoolean = {isBoolean} <br />
+      str2 = {str2} <br />
+      negNum2 = {negNum2} <br />
+      sampleCount = {sampleCount} <br />
+      typeof sampleCount = {isSampleCount} <br />
+      sampleLabel = {sampleLabel} <br />
+      typeof sampleLabel = {isSampleLabel}
       <hr />
     </div>
   );
 }
-/**After the existing samples, add let sampleCount = 42 and let sampleLabel = "Lab 3", plus typeof for each, and display them the same way (value, then the typeof string).  */

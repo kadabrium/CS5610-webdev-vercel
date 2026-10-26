@@ -1,6 +1,6 @@
 export default function Destructing() {
-  const person = { name: "John", age: 25 };
-  const { name, age } = person;
+  const person = { name: "John", age: 25, city: "Boston" };
+  const { name, age, city } = person;
   const numbers = ["one", "two", "three", "four"];
   const [first, second, third, fourth] = numbers;
   return (
@@ -9,7 +9,8 @@ export default function Destructing() {
       <h3>Object Destructing</h3>
       const &#123; name, age &#125; = &#123; name: "John", age: 25 &#125; <br /> <br />
       name = {name}     <br />
-      age = {age}
+      age = {age} <br />
+      city = {city}
       <h3>Array Destructing</h3>
       const [first, second, third, fourth] = ["one","two","three", "four"] <br /> <br />
       first = {first}   <br />
@@ -20,4 +21,3 @@ export default function Destructing() {
     </div>
   );
 }
-/** Add city: "Boston" to person, destructure city with name and age, and interpolate city = {city}.  */

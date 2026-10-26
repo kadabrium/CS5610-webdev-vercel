@@ -5,6 +5,8 @@ export default function FunctionDestructing() {
   const difference = subtract({ a: 4, b: 2 });
   const multiply = ({ a, b }: { a: number; b: number }) => a - b;
   const multip = multiply ({a: -3, b: -6});
+  const divide = ({ a, b }: { a: number; b: number }) => a / b;
+  const quotient = divide({ a: 10, b: 2 });
   return (
     <div id="wd-function-destructing">
       <h2>Function Destructing</h2>
@@ -14,9 +16,9 @@ export default function FunctionDestructing() {
       const difference = subtract(&#123; a: 4, b: 2 &#125;); <br />
       sum = {sum}                     <br />
       difference = {difference}  <br />
-      multiply = {multip}
+      multiply = {multip} <br />
+      quotient = {quotient}
       <hr />
     </div>
   );
 }
-/**Add const divide = ({ a, b }: { a: number; b: number }) => a / b, call it as divide({ a: 10, b: 2 }), and interpolate the quotient. */

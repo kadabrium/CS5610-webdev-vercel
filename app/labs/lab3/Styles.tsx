@@ -17,6 +17,11 @@ export default function Styles() {
     ...colorBlack,
     ...padding10px,
   };
+  const bgGray = {
+    backgroundColor: "lightgray",
+    ...colorBlack,
+    ...padding10px,
+  };
   return (
     <div id="wd-styles">
       <h2>Styles</h2>
@@ -32,7 +37,7 @@ export default function Styles() {
       <div style={bgRed}>Red background</div>
       <div style={bgBlue}>Blue background</div>
       <div style={bgGreen}>Green</div>
+      <div style={bgGray}>Gray background</div>
     </div>
   );
 }
-/**After the existing boxes, add const bgGray = { backgroundColor: "lightgray", ...colorBlack, ...padding10px } and a fifth div style={bgGray} with the text "Gray background" */

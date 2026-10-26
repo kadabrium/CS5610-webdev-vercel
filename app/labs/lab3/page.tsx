@@ -80,6 +80,7 @@ export default function Lab3() {
       <Add a={7} b={8} /> 
       <h4>Square of 4</h4>
       <Square>4</Square>
+      <p>Square of 5 = <Square>5</Square></p>
       <h4>Another square</h4>
       <Square>9</Square>
       <hr />
@@ -89,6 +90,7 @@ export default function Lab3() {
       <Highlight>
         Square and these are parametrized components
       </Highlight>
+      <Highlight>Children can be any JSX</Highlight>
       <PathParameters />
       <TodoList />
     </div>

@@ -3,15 +3,16 @@ export default function FindFunction() {
   let stringArray1 = ["string1", "string2", "string3"];
   const four = numberArray1.find((a) => a === 4);
   const string3 = stringArray1.find((a) => a === "string3");
+  const two = numberArray1.find((a) => a === 2);
   const notFound = stringArray1.find((a) => a === "str3ngi");
   return (
     <div id="wd-find-function">
       <h4>Find Function</h4>
       four = {four} <br />
-      string3 = {string3}<br/>
+      string3 = {string3}<br />
+      two = {two} <br />
       not found = {String(notFound)}
       <hr />
     </div>
   );
 }
-/** After string3, also find 2 in numberArray1 as const two = numberArray1.find((a) => a === 2) and interpolate two = {two}.  */

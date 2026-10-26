@@ -1,7 +1,7 @@
 export default function MapFunction() {
   let numberArray1 = [1, 2, 3, 4, 5, 6];
   const square = (a: number) => a * a;
-  const todos = ["Buy milk", "Feed the pets", "Do laundry"];
+  const todos = ["Buy milk", "Feed the pets", "Do laundry", "Email the TA"];
   const squares = numberArray1.map(square);
   const cubes = numberArray1.map((a) => a * a * a);
   return (
@@ -9,6 +9,7 @@ export default function MapFunction() {
       <h4>Map Function</h4>
       squares = {squares} <br />
       cubes = {cubes}     <br />
+      doubles = {numberArray1.map((a) => a * 2)} <br />
       Todos:
       <ol>
         {todos.map((todo) => (
@@ -19,4 +20,3 @@ export default function MapFunction() {
     </div>
   );
 }
-/**Append "Email the TA" to the todos array (unique string) so map renders a fourth <li key={todo}>. Also interpolate numberArray1.map((a) => a * 2) labeled doubles under cubes. */

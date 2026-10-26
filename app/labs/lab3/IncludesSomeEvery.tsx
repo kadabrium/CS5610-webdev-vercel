@@ -10,6 +10,7 @@ export default function IncludesSomeEvery() {
     <div id="wd-includes-some-every">
       <h4>Includes, Some, Every</h4>
       includes(3) = {includes3 + ""}           <br />
+      includes(5) = {numbers.includes(5) + ""} <br />
       includes(8) = {includes8 + ""}           <br />
       some(n &gt; 4) = {someGreaterThan4 + ""} <br />
       every(n &gt; 0) = {everyGreaterThan0 + ""}<br />
@@ -19,4 +20,3 @@ export default function IncludesSomeEvery() {
     </div>
   );
 }
-/**after the existing booleans, also display numbers.includes(5) as includes(5) = {numbers.includes(5) + ""} */

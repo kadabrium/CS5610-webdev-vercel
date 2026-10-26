@@ -8,6 +8,7 @@ export default function SimpleArrays() {
     <li key={1}>Buy milk</li>,
     <li key={2}>Feed the pets</li>,
     <li key={3}>Do laundry</li>,
+    <li key={4}>Call the dentist</li>,
   ];
   let variableArray1 = [
     functionScoped,
@@ -28,4 +29,4 @@ export default function SimpleArrays() {
     </div>
   );
 }
-/**Push one more sample <li key={4}>Call the dentist</li> onto htmlArray1.  */
+// Example of a React <li> element rendered from an array.

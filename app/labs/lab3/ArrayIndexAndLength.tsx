@@ -7,10 +7,10 @@ export default function ArrayIndexAndLength() {
     <div id="wd-array-index-and-length">
       <h4>Array index and length</h4>
       length1 = {length1} <br />
-      index1 = {index1}
+      index1 = {index1} <br />
+      indexOf1 = {numberArray1.indexOf(1)} <br />
       not found = {notFound}
       <hr />
     </div>
   );
 }
-/**After index1, also interpolate numberArray1.indexOf(1) labeled indexOf1 so the page shows 0. */

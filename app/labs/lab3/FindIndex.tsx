@@ -8,10 +8,10 @@ export default function FindIndex() {
     <div id="wd-find-index">
       <h4>Find Index Function</h4>
       fourIndex = {fourIndex} <br />
-      string3Index = {string3Index}<br/>
+      string3Index = {string3Index}<br />
+      sixIndex = {numberArray1.findIndex((a) => a === 6)} <br />
       not found = {notFound}
       <hr />
     </div>
   );
 }
-/**After string3Index, also interpolate numberArray1.findIndex((a) => a === 6) labeled sixIndex so the page shows 4.  */

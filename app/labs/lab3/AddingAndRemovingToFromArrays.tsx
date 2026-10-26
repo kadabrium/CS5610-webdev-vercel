@@ -8,7 +8,8 @@ export default function AddingAndRemovingToFromArrays() {
   numberArray1.push(6);
   stringArray1.push("string3");
   todoArray.push(<li key={3}>Walk the dogs</li>);
-  todoArray.push(<li key={3}>Mow the lawn</li>);
+  todoArray.push(<li key={5}>Mow the lawn</li>);
+  todoArray.push(<li key={4}>Buy stamps</li>);
   numberArray1.splice(2, 1);
   stringArray1.splice(1, 1);
   todoArray.splice(1, 1);
@@ -23,4 +24,3 @@ export default function AddingAndRemovingToFromArrays() {
     </div>
   );
 }
-/**After the existing todoArray.push, also push <li key={4}>Buy stamps</li>. Leave the number and string splices as they are */
