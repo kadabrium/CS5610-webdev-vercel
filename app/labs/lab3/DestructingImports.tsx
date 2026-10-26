@@ -35,9 +35,9 @@ export default function DestructingImports() {
             <td>divide(8, 2) = {divide(8, 2)}</td>
           </tr>
           <tr>
-            <td>Math.add(8, 2) = {Math.add(8, 2)}</td>
-            <td>Matematica.add(8, 2) = {Matematica.add(8, 2)}</td>
-            <td>add(8, 2) = {add(8, 2)}</td>
+            <td>Math.add(10, 20) = {Math.add(10, 20)}</td>
+            <td>Matematica.add(10, 20) = {Matematica.add(10, 20)}</td>
+            <td>add(10, 20) = {add(10, 20)}</td>
           </tr>
           <tr>
             <td>Math.remainder(10, 3) = {Math.remainder(10, 3)}</td>
