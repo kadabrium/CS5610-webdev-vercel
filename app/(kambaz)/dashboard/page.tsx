@@ -25,6 +25,8 @@ export default function Dashboard() {
         ),
       )
     : courses;
+  
+  const [displayedList, setDisplayedList] = useState(visibleCourses);
 
   return (
     <div id="wd-dashboard">
@@ -85,7 +87,7 @@ export default function Dashboard() {
           type="button"
           className="rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white"
           id="wd-add-new-course-click"
-          onClick={() => addCourse(course)}
+          onClick = {()=>{displayedList.length == visibleCourses.length? setDisplayedList(courses) : setDisplayedList(visibleCourses)}}
         >
           Enrollments
         </button>
@@ -97,7 +99,7 @@ export default function Dashboard() {
         id="wd-dashboard-courses"
         className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
       >
-        {visibleCourses.map((c: Course) => (
+        {displayedList.map((c: Course) => (
           <CourseCard
             key={c._id}
             course={c}
