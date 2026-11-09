@@ -38,7 +38,7 @@ export const useAsmStore = create<AsmStore>((set) => ({
           due: asm.due ?? "2026-11-09",
           available: asm.available?? "2026-10-25"
         }
-      ],
+      ]
     })),
 
   delAssignment: (asmId) =>

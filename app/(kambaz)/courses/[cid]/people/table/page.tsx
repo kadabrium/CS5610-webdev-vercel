@@ -1,11 +1,10 @@
+"use client"
 import { FaUserCircle } from "react-icons/fa";
 import * as db from "../../../../database";
-export default async function PeopleTable({
-  params,
-}: {
-  params: Promise<{ cid: string }>;
-}) {
-  const { cid } = await params;
+import { useParams } from "next/navigation";
+
+export default function PeopleTable() {
+  const { cid } = useParams();
   const { users, enrollments } = db;
   const enrolled = users.filter((usr) =>
     enrollments.some(

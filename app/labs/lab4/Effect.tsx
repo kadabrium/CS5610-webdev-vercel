@@ -8,7 +8,7 @@ export default function Effect() {
 
   // runs when state members included in the bottom array change
   useEffect(
-    () => {document.title = `${name} — clicked ${count}`;}, 
+    () => {document.title = `${name} — clicked ${count}`; console.log(name, count)}, 
     [name, count]
   );
 

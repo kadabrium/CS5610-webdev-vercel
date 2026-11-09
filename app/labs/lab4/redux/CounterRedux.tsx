@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { down, up } from "./counterReducer";
+import { down, up, reset } from "./counterReducer";
 import type { RootState } from "./store";
 
 export default function CounterRedux() {
@@ -23,6 +23,14 @@ export default function CounterRedux() {
         className="rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
       >
         Down
+      </button>
+      <button
+        type="button"
+        onClick={() => dispatch(reset())}
+        id="wd-redux-reset-click"
+        className="ms-2 rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white"
+      >
+        Reset
       </button>
     </div>
   );

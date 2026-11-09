@@ -28,6 +28,16 @@ export default function PassingDataOnEvent() {
       >
         Pass Data Parameter
       </button>
+
+ 
+      <button
+        type="button"
+        onClick={() => lifeIs("Web Development")}
+        id="wd-pass-data-course-click"
+        className="rounded bg-green-600 px-3 py-1.5 text-sm font-medium text-white"
+      >
+        Pass Data Course
+      </button>
       <hr />
     </div>
   );

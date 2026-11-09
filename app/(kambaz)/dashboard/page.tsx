@@ -80,6 +80,16 @@ export default function Dashboard() {
         id="wd-course-date"
       />
 
+      {/*enrollment button*/}
+      <button
+          type="button"
+          className="rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white"
+          id="wd-add-new-course-click"
+          onClick={() => addCourse(course)}
+        >
+          Enrollments
+        </button>
+
       <hr />
       <h2 id="wd-dashboard-published">Published Courses ({visibleCourses.length})</h2>
       <hr />

@@ -1,5 +1,5 @@
-export type FnAndMsg = { message: string; theFunction: (message: string) => void;}
-export default function PassingFunctions({message, theFunction}: FnAndMsg) {
+export type FnAndMsg = { message: string; theFunction: (message: string) => void; theOtherFunction: () => void;}
+export default function PassingFunctions({message, theFunction, theOtherFunction}: FnAndMsg) {
   return (
     <div id="wd-passing-functions">
       <h2>Passing Functions</h2>
@@ -10,6 +10,14 @@ export default function PassingFunctions({message, theFunction}: FnAndMsg) {
         className="rounded bg-green-600 px-3 py-1.5 text-sm font-medium text-white"
       >
         Invoke the Function
+      </button>
+      <button
+        type="button"
+        onClick={() => theOtherFunction()}
+        id="wd-pass-functions-other-click"
+        className="ms-2 rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white"
+      >
+        Invoke the Other Function
       </button>
       <hr />
     </div>

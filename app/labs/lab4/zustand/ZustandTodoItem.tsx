@@ -30,6 +30,8 @@ export default function ZustandTodoItem({ todo }: { todo: Todo }) {
         >
           Delete
         </button>
+
+        <input type = "checkbox" checked={todo.done} onChange={() => useTodoStore.getState().toggleDone(todo.id)} />
       </span>
     </li>
   );

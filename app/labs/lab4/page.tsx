@@ -30,7 +30,7 @@ export default function Lab4() {
       <h3>Client State Variables</h3>
       <ClickEvent/>
       <PassingDataOnEvent/>
-      <PassingFunctions message="Hello from Lab 4" theFunction={sayHello}/>
+      <PassingFunctions message="Hello from Lab 4" theFunction={sayHello} theOtherFunction={theOtherFunction}/>
       <CounterBroken/>
       <Counter/>
       <BooleanStateVariables/>
@@ -56,3 +56,4 @@ export default function Lab4() {
 }
 
 const sayHello = (msg: string) => { alert(msg);}
+const theOtherFunction = () => { alert("Sample from parent"); };
