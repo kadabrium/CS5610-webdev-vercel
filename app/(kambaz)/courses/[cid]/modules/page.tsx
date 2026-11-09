@@ -3,15 +3,48 @@ import { useParams } from "next/navigation";
 import Module from "./Module";
 import Lesson from "./Lesson";
 import * as db from "../../../database";
+import ModuleControlButtons from "./ModuleControlButtons";
+//import { useState } from "react";
+import { useModulesStore, type CourseModule, type ModulesStore } from "@/app/(kambaz)/store/modulesStore";
+import ModulesControls from "./ModulesControls";
+
+
+
+//type Module = (typeof db.modules)[number] & {editing?: boolean};
 
 export default function Modules() {
   // list of modules under curr course
   const { cid } = useParams();
-  const modules = db.modules.filter((module) => module.course === cid);
+  /*const [modules, setModules] = useState(db.modules.filter((module) => module.course === cid));
+  const updateModule = (mod: Module) => {
+    setModules(modules.map((i) => i._id == mod._id? mod : i));
+  }*/
+  const modules = useModulesStore((state: ModulesStore) => state.modules)
+    .filter((module) => module.course == cid);
 
   return (
     <div>
+      <ModulesControls/>
+
+      <ul id="wd-modules" className="m-0 list-none p-0">
+        {modules.map((module: CourseModule) => (
+          <Module key={module._id} mod={module} extra={<ModuleControlButtons moduleId={module._id} />}>
+
+            
+            {module.lessons?.map((lesson) => (
+                <Lesson key={lesson._id} 
+                title={lesson.name} />))}
+
+          </Module>
+        ))}
+      </ul>
+
       
+    </div>
+  );
+}
+
+/*<div>
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <button
           type="button"
@@ -37,19 +70,31 @@ export default function Modules() {
         >
           + Module
         </button>
-      </div>
+      </div> */
 
-      <ul id="wd-modules" className="m-0 list-none p-0">
-        {modules.map((module) => (
-          <Module key={module._id} title={module.name}>
+/*{modules.map((module: Module) => (
+          <Module key={module._id} 
+                  title={module.editing?
+                  (<input
+                    className="w-1/2 rounded border border-neutral-300 px-2 py-1 text-base"
+                    defaultValue={module.name}
+                    onChange={(e) => updateModule({ ...module, name: e.target.value })}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        updateModule({ ...module, editing: false });
+                      }
+                    }}/>) : (module.name)}>
+
+            <ModuleControlButtons moduleId={module._id}
+            />
+
             {module.lessons?.map((lesson) => (
-              <Lesson key={lesson._id} title={lesson.name} />
-            ))}
-          </Module>
-        ))}
-      </ul>
+              <Lesson key={lesson._id} 
+              title={lesson.name} />))}
 
-      <ul id="wd-modules-old">
+          </Module>
+        ))} */
+/*<ul id="wd-modules-old">
         <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
           <Lesson title="LEARNING OBJECTIVES">
             <li className="wd-content-item">Introduction to the course</li>
@@ -75,7 +120,7 @@ export default function Modules() {
 
         </Module>
         
-        <Module title="Week 2 - CSS">{/* Expand lessons on your own */}
+        <Module title="Week 2 - CSS">
           <Lesson title="LEARNING OBJECTIVES">
             <li className="wd-content-item">CSS rules</li>
             <li className="wd-content-item">React CSS classNames</li>
@@ -97,8 +142,4 @@ export default function Modules() {
             <li className="wd-content-item">Sample lesson content</li>
           </Lesson>
         </Module>
-      </ul>
-    </div>
-  );
-}
-
+      </ul> */

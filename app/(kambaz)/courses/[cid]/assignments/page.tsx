@@ -1,11 +1,93 @@
+"use client";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import AssignmentItem from "./AssignmentItem";
 import { FaPlus, FaSearch } from "react-icons/fa";
-import * as db from "../../../database";
+//import * as db from "../../../database";
+import { useAsmStore, type AsmItemData, type AsmStore } from "@/app/(kambaz)/store/assignmentStore";
+import AsmItemButtons from "./AsmItemButtons";
 
+
+// assignments list page
+export default /*async*/function Assignments(/*{params}: asyncCID*/) {
+  //const { cid } = await params;
+  const { cid } = useParams();
+  const assignments = /*db.assignments*/useAsmStore((state: AsmStore) => state.asms)
+      .filter((assignment: AsmItemData) => assignment.course == cid);
+
+  return (
+    <div id="wd-assignments">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+
+        <div className="relative">
+          <FaSearch className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-neutral-500" />
+          <input
+            placeholder="Search for Assignments"
+            id="wd-search-assignment"
+            className="rounded border py-1.5 pr-3 pl-9 text-sm"
+          />
+        </div>
+        <div className="flex gap-2">
+          <button
+            id="wd-add-assignment-group"
+            type="button"
+            className="inline-flex items-center gap-1 rounded border px-3 py-1.5 text-sm"
+          >
+            <FaPlus /> Group
+          </button>
+
+          {/* Add button, links to blank editor */}
+          <Link
+            id="wd-add-assignment"
+            type="button"
+            className="inline-flex items-center gap-1 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
+            href={`/courses/${cid}/assignments/${"new"}`}
+
+          >
+            <FaPlus /> Assignment
+          </Link>
+          
+        </div>
+      </div>
+      <h3
+        id="wd-assignments-title"
+        className="mb-3 flex items-center justify-between rounded bg-neutral-200 p-3 text-lg"
+      >
+        <span>ASSIGNMENTS 40% of Total</span>
+        <button type="button" className="rounded border bg-white px-2 py-0.5 text-sm">
+          <FaPlus />
+        </button>
+      </h3>
+      {/* Main assignment list
+        AsmItemButtons go into extra of AssignmentItem
+       */}
+      <ul id="wd-assignment-list" className="m-0 list-none p-0">
+
+         {assignments.map((asm) => (
+          <AssignmentItem key={asm._id}
+            asmData={asm}
+            extra={<AsmItemButtons asmId={asm._id} cid={String(cid)}/>}
+            details={`Multiple Modules | Not available until ${asm.available} | Due ${asm.due} | ${asm.points} pts`}
+            >
+
+          </AssignmentItem>
+          
+        ))}
+
+      </ul>
+
+      
+
+    </div>
+  );
+}
+
+
+/*
 type asyncCID = { params: Promise<{ cid: string }>; }
-
-export default async function Assignments({params}: asyncCID) {
-  const { cid } = await params;
+export default function Assignments({params}: asyncCID) {
+  //const { cid } = await params;
+  const { cid } = useParams();
   const assignments = db.assignments.filter(
     (assignment) => assignment.course === cid,
   );
@@ -72,3 +154,4 @@ Due May 27 at 11:59pm | 100 pts"/>
     </div>
   );
 }
+ */

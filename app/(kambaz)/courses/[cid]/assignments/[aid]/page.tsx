@@ -1,26 +1,44 @@
+"use client"
 import Link from "next/link";
+import { useState } from "react";
+import { useParams } from "next/navigation";
 import { FaPlus, FaSearch } from "react-icons/fa";
-import * as db from "../../../../database";
+//import * as db from "../../../../database";
+import { useAsmStore, type AsmItemData, type AsmStore } from "@/app/(kambaz)/store/assignmentStore";
 
-type asAID = { params: Promise<{ cid: string, aid: string }>; }
-export default async function AssignmentEditor( { params }: asAID) {
-  const {cid, aid} = await params;
-  const asmt = db.assignments.find((a) => a._id === aid);
+// assignment editing page
+// save button adds edited assignment to store list
+//type asAID = { params: Promise<{ cid: string, aid: string }>; }
+export default function AssignmentEditor( /*{ params }: asAID*/) {
+  //const {cid, aid} = await params;
+  const { cid, aid } = useParams();
+  const currAsm = useAsmStore((state: AsmStore) => state.asms).find((a) => a._id === aid);
+  const editAssignment = useAsmStore((state: AsmStore) => state.editAssignment);
+  const addAssignment = useAsmStore((state) => state.addAssignment);
 
-  // Assignment Name, Description, Points, and Due Date
+  const isNew = aid == "new";
+
+  // cache state vars for Assignment Name, Description, Points, and Due Date
+  const [currTitle, setCurrTitle] = useState(currAsm?.title ?? "New Assignment");
+  const [currDesc, setCurrDesc] = useState(currAsm?.description ?? "Enter description for new assignment");
+  const [currDue, setCurrDue] = useState(currAsm?.due ?? "2026-10-25");
+  const [currAvail, setCurrAvail] = useState(currAsm?.available ?? "2026-10-25");
+  const [currPoints, setCurrPoints] = useState(currAsm?.points ?? 100);
+  
+   
   return (
     <div id="wd-assignments-editor">
        {/*Assignment name title box*/}
       <label htmlFor="wd-name" className="block text-top align-top pr-3 py-3">
-        Assignment Name {asmt?._id}</label>
-      <input id="wd-name" defaultValue={asmt?.title ?? "A1 - HTML + CSS"} />
+        Assignment Name {currAsm?._id}</label>
+      <input id="wd-name" defaultValue={currTitle} onChange={(e) => setCurrTitle(e.target.value)} />
       <label htmlFor="wd-name" className="block text-top align-top pr-3 py-3">
         Assignment ID {aid}</label>
 
       
       {/*Description body box*/}
       <textarea id="wd-description" rows = {10}
-        defaultValue={asmt?.description ?? "The assignment is available online Submit a link to the landing page of"}
+        defaultValue={currDesc} onChange={(e) => setCurrDesc(e.target.value)}
         className = "font-sans mb-2 w-full rounded border border-neutral-300 px-3 py-2">
       </textarea>
 
@@ -38,7 +56,7 @@ export default async function AssignmentEditor( { params }: asAID) {
               <label htmlFor="wd-points">Points</label>
             </td>
             <td>
-              <input id="wd-points" defaultValue={asmt?.points ?? 100} className="w-full border border-gray-300 rounded px-3 py-2" />
+              <input id="wd-points" defaultValue={currPoints} onChange={(e) => setCurrPoints(Number(e.target.value))} className="w-full border border-gray-300 rounded px-3 py-2" />
             </td>
           </tr>
 
@@ -48,7 +66,7 @@ export default async function AssignmentEditor( { params }: asAID) {
               <label htmlFor="wd-group">Assignment Group</label>
             </td>
             <td>
-              <select id="wd-group" className="w-full border border-gray-300 rounded px-3 py-2">
+              <select id="wd-group" defaultValue={"assignments"} className="w-full border border-gray-300 rounded px-3 py-2">
                 <option value="assignments">Assignments</option>
                 <option value="quizzes">Quizzes</option>
                 <option value="exams">Exams</option>
@@ -111,7 +129,7 @@ export default async function AssignmentEditor( { params }: asAID) {
               <br />
 
               <label htmlFor="wd-due-date">Due Date</label>
-              <input type="date" id="wd-due-date" defaultValue={asmt?.due ?? "2026-10-25"} />
+              <input type="date" id="wd-due-date" defaultValue={currDue} onChange={(e) => setCurrDue(e.target.value)} />
               <br />
 
               {/* these 2 are in the same row / nested hbox table*/}
@@ -123,7 +141,7 @@ export default async function AssignmentEditor( { params }: asAID) {
                       <label htmlFor="wd-available-from">Available From</label>
                     </td>
                     <td>
-                      <input type="date" id="wd-available-from" defaultValue={asmt?.available ?? "2026-10-25"}/>
+                      <input type="date" id="wd-available-from" defaultValue={currAsm?.available ?? "2026-10-25"}/>
                     </td>
                   </tr>
                   <tr>
@@ -132,7 +150,7 @@ export default async function AssignmentEditor( { params }: asAID) {
                       <label htmlFor="wd-available-until">Available Until</label>
                     </td>
                     <td>
-                      <input type="date" id="wd-available-until" defaultValue={asmt?.due ?? "2026-10-25"}/>
+                      <input type="date" id="wd-available-until" defaultValue={currAsm?.due ?? "2026-10-25"}/>
                     </td>
                   </tr>
                 </tbody>
@@ -142,16 +160,24 @@ export default async function AssignmentEditor( { params }: asAID) {
 
           </tr>
 
-          {/* cancel and save buttons */}
-
         </tbody>
       </table>
-      <Link href="/courses/1234/assignments" id="wd-cancel"
+
+      {/* cancel and save buttons */}
+      <Link href={`/courses/${cid}/assignments`} id="wd-cancel"
       className="inline-flex items-center gap-1 rounded border px-3 py-1.5 text-sm"
       >Cancel</Link>{" "}
-      <Link href="/courses/1234/assignments" id="wd-save"
-       className="inline-flex items-center gap-1 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white">
-        <FaPlus />Save</Link>
+
+      <Link id="wd-save"
+       className="inline-flex items-center gap-1 rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white"
+       href={`/courses/${cid}/assignments`}
+       onClick={()=> isNew? 
+        addAssignment({title: currTitle, course: String(cid), description: currDesc, due: currDue, available: currAvail, points: currPoints})
+      : editAssignment(String(aid), {title: currTitle, course: String(cid), description: currDesc, due: currDue, available: currAvail, points: currPoints})}>
+        
+        <FaPlus />Save
+      </Link>
+      
     </div>
   );
 }
