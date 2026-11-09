@@ -23,12 +23,22 @@ function Grandchild({count, setCount}: CountHandle) {
   );
 }
 
+function Middle({count, setCount}: CountHandle) {
+  return (
+    <div id="wd-prop-drill-child" className="mb-2 rounded border border-neutral-200 p-3">
+      <h4>Middle</h4>
+      <p>This component never uses count itself. It only forwards props.</p>
+      <Grandchild count={count} setCount={setCount} />
+    </div>
+  );
+}
+
 function Child({count, setCount}: CountHandle) {
   return (
     <div id="wd-prop-drill-child" className="mb-2 rounded border border-neutral-200 p-3">
       <h4>Child</h4>
       <p>This component never uses count itself. It only forwards props.</p>
-      <Grandchild count={count} setCount={setCount} />
+      <Middle count={count} setCount={setCount} />
     </div>
   );
 }

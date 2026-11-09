@@ -49,6 +49,8 @@ export default function Dashboard() {
           Update
         </button>
       </h5>
+
+      {/*edit inputs*/}
       <input
         className="mb-2 mt-2 block w-full max-w-xl rounded border border-neutral-300 px-3 py-1.5"
         value={course.name}
@@ -57,13 +59,27 @@ export default function Dashboard() {
       />
       <textarea
         className="mb-3 block w-full max-w-xl rounded border border-neutral-300 px-3 py-1.5"
-        rows={3}
+        rows={5}
         value={course.description}
         onChange={(e) =>
           setCourse({ ...course, description: e.target.value })
         }
         id="wd-course-description"
       />
+      <input
+        className="mb-2 mt-2 block w-full max-w-xl rounded border border-neutral-300 px-3 py-1.5"
+        value={course.number}
+        onChange={(e) => setCourse({ ...course, number: e.target.value })}
+        id="wd-course-number"
+      />
+      <input
+        className="mb-2 mt-2 block w-full max-w-xl rounded border border-neutral-300 px-3 py-1.5"
+        type="date"
+        value={course.startDate}
+        onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
+        id="wd-course-date"
+      />
+
       <hr />
       <h2 id="wd-dashboard-published">Published Courses ({visibleCourses.length})</h2>
       <hr />
